@@ -1,0 +1,46 @@
+<main>
+    {{isSpining}}
+    <section class="game-container">
+        <div class="logo">
+            <img src="../../../assets/art/logo.png" alt="logo">
+        </div>
+        <div class="game">
+            <div [class]="isSpining ? 'rows activeSpin' : 'rows'" *ngIf="rows[0]">
+                <img *ngFor="let item of rows[0]" src="../../../assets/symbols/{{_chooseSymbol(item)}}.png" alt="">
+            </div>
+            <div [class]="isSpining ? 'rows activeSpin' : 'rows'" *ngIf="rows[1]">
+                <img *ngFor="let item of rows[1]" src="../../../assets/symbols/{{_chooseSymbol(item)}}.png" alt="">
+            </div>
+            <div [class]="isSpining ? 'rows activeSpin' : 'rows'" *ngIf="rows[2]">
+                <img *ngFor="let item of rows[2]" src="../../../assets/symbols/{{_chooseSymbol(item)}}.png" alt="">
+            </div>
+            <div [class]="isSpining ? 'rows activeSpin' : 'rows'" *ngIf="rows[3]">
+                <img *ngFor="let item of rows[3]" src="../../../assets/symbols/{{_chooseSymbol(item)}}.png" alt="">
+            </div>
+            <div [class]="isSpining ? 'rows activeSpin' : 'rows'" *ngIf="rows[4]">
+                <img *ngFor="let item of rows[4]" src="../../../assets/symbols/{{_chooseSymbol(item)}}.png" alt="">
+            </div>
+        </div>
+
+    </section>
+    <section class="buttons">
+        <div class="button-container">
+            <button [disabled]="isSpining" id="spin" (click)="onSpin(); _clearBigWin()"></button>
+            <p>Balance: {{money}}$</p>
+            <p>Total bet: {{spending}}$</p>
+            <p>Win: {{countWin}} $</p>
+        </div>
+    </section>
+    <section class="bigWin" *ngIf="bigWin" (click)="_clearBigWin()">
+        <img id="bigWin_image" src="../../../assets/art/bigwin.png" alt="">
+        <div id="bigWin_text">
+            <p>{{countWin}} $</p>
+        </div>
+    </section>
+</main>
+
+<audio class="land" src="../../../assets/sounds/spin_land.mp3"></audio>
+<audio class="land" src="../../../assets/sounds/spin_land.mp3"></audio>
+<audio class="land" src="../../../assets/sounds/spin_land.mp3"></audio>
+<audio class="land" src="../../../assets/sounds/spin_land.mp3"></audio>
+<audio class="land" src="../../../assets/sounds/spin_land.mp3"></audio>
