@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slot.component.scss']
 })
 export class SlotComponent implements OnInit {
-  // symbols = 'wcossoottobdlodlppblolcdooodssoospp';
-  symbols = 'ppppppppppppppppppppppppppppppppppp';
+  symbols = 'wcossoottobdlodlppblolcdooodssoospp';
+  // symbols = 'ppppppppppppppppppppppppppppppppppp';
   row = [];
   rows = [
     ['w', 'w', 'w', 'w'],
